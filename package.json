@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Cli tool for cricket fans that provides them with live scores , match history , players records and many more.",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
