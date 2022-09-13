@@ -8,6 +8,12 @@ const options = {
   },
 };
 
-fetch(url, options)
-  .then((res) => res.json())
-  .then((json) => console.log(json.data.matches[0]));
+let matches_data = {};
+
+const getData = async () => {
+  const reponse = await fetch(url, options);
+  const data = await reponse.json();
+  return data;
+};
+
+matches_data = getData();
