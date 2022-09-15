@@ -8,6 +8,20 @@ const options = {
   },
 };
 
-fetch(url, options)
-  .then((res) => res.json())
-  .then((json) => console.log(json.data.matches[0]));
+let matches_data = {};
+
+const getData = async () => {
+  const reponse = await fetch(url, options);
+  const data = await reponse.json();
+  return data;
+};
+
+matches_data = await getData();
+
+for (let i = 0; i < 10; i++) {
+  let match = matches_data.data.matches[i];
+  console.log("");
+  console.log("STATUS = " + match.statusText);
+  console.log("MATCH = " + match.slug);
+  console.log("---------------------------");
+}
